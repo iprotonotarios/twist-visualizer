@@ -2,6 +2,8 @@ Table nodePositions;
 String positionsFile = "../node_positions.csv";
 PImage background;
 String backgroundFile = "../background_image_twist.png";
+PImage fireLogo;
+String fireLogoFile = "../FIRE.png";
 Table trace;
 String traceFile = "../trace.tsv";
 Table average_listening;
@@ -16,9 +18,11 @@ String nodeLabel;
 void setup() {
   size(1744, 800);
   background = loadImage(backgroundFile);
+  fireLogo = loadImage(fireLogoFile);
   tint(255, 180);
   image(background, 0, 0);
   noTint();
+  image(fireLogo, width-136, 30);
    
   nodePositions = loadTable(positionsFile);
   nodes = new Node[nodePositions.getRowCount()];
@@ -48,10 +52,11 @@ void draw() {
     }
   }  
   if (count<60000) {
-//    count ++;
-      count = count+1;
+    count ++;
+//      count = count+10;
   } else noLoop();
-  if (count%300 == 0) saveFrame("/home/ioannis/RELYonIT/twist_energy_ULANC/twist_visualizer/video/screen-#####.tif");
+//  if (count%300 == 0) saveFrame("/home/ioannis/RELYonIT/twist_energy_ULANC/twist_visualizer/video/screen-#####.tif");
+  if (count%200 == 0) saveFrame("/home/ioannis/sketchbook/twist_video/visualize/video/screen-#####.tif");
 };
 
 

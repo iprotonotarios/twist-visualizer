@@ -44,6 +44,9 @@ class Node {
       text(model.getFloat(19-int(r/2500), 1)+"%", width-85, height-160); 
       text(100-r/500+"%", width-85, height-40);
       
+      noTint();
+      image(fireLogo, width-136, 30);
+        
     } else     
     ellipse(x, y, r, r);    
     
